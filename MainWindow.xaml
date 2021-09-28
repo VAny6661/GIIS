@@ -1,0 +1,39 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="423.194" Width="917.586">
+    <Canvas x:Name="canvas1" Button.MouseDown="cnv_MouseLeftButtonDown" Focusable="True"
+            Button.MouseUp="cnv_MouseLeftButtonUp" Grid.Row="1" KeyDown="canvas1_KeyDown">
+        <Canvas.Background>
+            <DrawingBrush TileMode="Tile" Viewport="-36,-15,5,5" 
+                                     ViewportUnits="Absolute">
+                <DrawingBrush.Drawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry Rect="0,0,50,50"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+        </Canvas.Background>
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="Линии" Width="106">
+                <RadioButton GroupName="Lines" Content="ЦДА" x:Name="CDA_L" IsChecked="True"></RadioButton>
+                <RadioButton GroupName="Lines" Content="Брезенхем" x:Name="Brezenhem_L" IsChecked="False"></RadioButton>
+                <RadioButton GroupName="Lines" Content="Ву" x:Name="Vu_L" IsChecked="False"></RadioButton>
+				</MenuItem>
+            <CheckBox x:Name="Debug" Height="25" Width="124" VerticalAlignment="Stretch" BorderBrush="#FFDADADA" Content="Debug" IsChecked="False"
+                      Click="Debug_Click">
+            </CheckBox>
+                    <Button x:Name="MoveBack" Height="25" Width="124" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="&lt;-" Visibility="Hidden" Click="MoveBack_Click"/>
+            <Button x:Name="MoveForward" Height="25" Width="124" VerticalAlignment="Bottom" HorizontalAlignment="Left" Content="-&gt;" Visibility="Hidden" Click="MoveForward_Click"/>
+        </Menu>
+    </Canvas>
+</Window>
